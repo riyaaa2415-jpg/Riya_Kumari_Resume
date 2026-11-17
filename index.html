@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ankit | Resume</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root{
+  --primary:#e39d3c;
+  --primary-dark:#cf872a;
+  --text:#222;
+  --muted:#666;
+  --background:#f8f9fb;
+  --white:#ffffff;
+}
+
+
+/* =========================
+   UNIVERSAL SELECTOR
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+/* =========================
+   SMOOTH SCROLL
+========================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--background);
+  color:var(--text);
+  line-height:1.6;
+}
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(255,255,255,0.96);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
+  box-shadow:0 2px 15px rgba(0,0,0,0.05);
+  z-index:1000;
+  backdrop-filter:blur(8px);
+}
+
+nav h2{
+  font-weight:600;
+  color:var(--text);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+nav a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  position:relative;
+  transition:color 0.3s ease;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--primary);
+  transition:width 0.3s ease;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 20px 80px;
+  text-align:center;
+}
+
+.hero-content{
+  max-width:750px;
+}
+
+.hero img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:25px 0;
+  border:4px solid white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:transform 0.3s ease;
+}
+
+.hero img:hover{
+  transform:scale(1.05);
+}
+
+.hero h1{
+  font-size:48px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.highlight{
+  color:var(--primary);
+}
+
+.hero p{
+  margin:20px 0;
+  font-size:18px;
+  color:#555;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+  display:inline-block;
+  padding:12px 28px;
+  background:var(--primary);
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn:hover{
+  background:var(--primary-dark);
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.resume-btn{
+  background:#222;
+}
+
+.resume-btn:hover{
+  background:#444;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  padding:100px 60px;
+}
+
+section h2{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:40px;
+  position:relative;
+}
+
+section h2::after{
+  content:"";
+  display:block;
+  width:50px;
+  height:3px;
+  background:var(--primary);
+  margin:12px auto 0;
+  border-radius:5px;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-text{
+  max-width:750px;
+  margin:auto;
+  text-align:center;
+  color:var(--muted);
+  font-size:16px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+.skill-pill{
+  background:white;
+  padding:10px 20px;
+  border-radius:30px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skill-pill:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.09);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+}
+
+.card{
+  background:white;
+  width:300px;
+  padding:25px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.10);
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+
+/* =========================
+   EDUCATION TIMELINE
+========================= */
+
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin:0 auto;
+  padding:20px 0;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:var(--primary);
+  transform:translateX(-50%);
+}
+
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:20px 40px;
+}
+
+.timeline-item:nth-child(odd){
+  left:0;
+  text-align:right;
+}
+
+.timeline-item:nth-child(even){
+  left:50%;
+}
+
+.timeline-dot{
+  position:absolute;
+  top:30px;
+  width:16px;
+  height:16px;
+  background:var(--primary);
+  border:4px solid white;
+  border-radius:50%;
+  box-shadow:0 0 0 2px var(--primary);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot{
+  right:-8px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot{
+  left:-8px;
+}
+
+.timeline-content{
+  background:white;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.timeline-content:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.10);
+}
+
+.timeline-content h3{
+  margin-bottom:6px;
+  font-size:18px;
+}
+
+.timeline-content p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.timeline-year{
+  display:inline-block;
+  margin-top:8px;
+  font-weight:600;
+  color:var(--primary);
+}
+
+
+/* =========================
+   EXPERIENCE / PROJECT LIST
+========================= */
+
+.card-list{
+  text-align:left;
+  margin-top:18px;
+  padding-left:20px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.card-list li{
+  margin-bottom:8px;
+}
+
+
+/* =========================
+   PROJECTS TIMELINE
+========================= */
+
+.project-timeline{
+  position:relative;
+  max-width:1000px;
+  margin:0 auto;
+  padding:20px 0;
+}
+
+.project-timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:var(--primary);
+  transform:translateX(-50%);
+}
+
+.project-item{
+  position:relative;
+  width:50%;
+  padding:25px 50px;
+}
+
+.project-item:nth-child(odd){
+  left:0;
+  text-align:right;
+}
+
+.project-item:nth-child(even){
+  left:50%;
+  text-align:left;
+}
+
+.project-dot{
+  position:absolute;
+  top:35px;
+  width:18px;
+  height:18px;
+  background:var(--primary);
+  border:4px solid white;
+  border-radius:50%;
+  box-shadow:0 0 0 2px var(--primary);
+  z-index:2;
+}
+
+.project-item:nth-child(odd) .project-dot{
+  right:-9px;
+}
+
+.project-item:nth-child(even) .project-dot{
+  left:-9px;
+}
+
+.project-content{
+  background:white;
+  padding:28px;
+  border-radius:16px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-content:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.10);
+}
+
+.project-content h3{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.project-type{
+  display:inline-block;
+  font-size:13px;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:12px;
+}
+
+.project-content .card-list{
+  margin-top:10px;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-card{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.contact-card p{
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.secondary-btn{
+  background:#222;
+}
+
+.secondary-btn:hover{
+  background:#444;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:white;
+  color:#777;
+  font-size:14px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width:768px){
+
+  /* Navigation */
+
+  nav{
+    padding:15px 20px;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav h2{
+    font-size:20px;
+  }
+
+  nav ul{
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  nav a{
+    font-size:13px;
+  }
+
+
+  /* Hero */
+
+  .hero{
+    min-height:100vh;
+    padding:160px 20px 80px;
+  }
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .hero img{
+    width:130px;
+    height:130px;
+  }
+
+
+  /* Sections */
+
+  section{
+    padding:70px 20px;
+  }
+
+  section h2{
+    font-size:28px;
+  }
+
+
+  /* Cards */
+
+  .card{
+    width:100%;
+    max-width:400px;
+  }
+
+
+  /* Education Timeline */
+
+  .timeline::before{
+    left:10px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even){
+    width:100%;
+    left:0;
+    text-align:left;
+    padding:20px 20px 20px 40px;
+  }
+
+  .timeline-item:nth-child(odd){
+    text-align:left;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot{
+    left:2px;
+    right:auto;
+  }
+
+
+  /* Projects Timeline */
+
+  .project-timeline::before{
+    left:10px;
+  }
+
+  .project-item,
+  .project-item:nth-child(even),
+  .project-item:nth-child(odd){
+    width:100%;
+    left:0;
+    text-align:left;
+    padding:20px 20px 20px 40px;
+  }
+
+  .project-item:nth-child(odd) .project-dot,
+  .project-item:nth-child(even) .project-dot{
+    left:1px;
+    right:auto;
+  }
+
+  .project-content{
+    padding:22px;
+  }
+
+
+  /* Contact */
+
+  .contact-card{
+    padding:30px 20px;
+  }
+
+}
+
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width:480px){
+
+  nav ul{
+    gap:8px;
+  }
+
+  nav a{
+    font-size:11px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .btn{
+    padding:10px 22px;
+    font-size:14px;
+  }
+
+  .skill-pill{
+    font-size:14px;
+  }
+
+  .project-content h3{
+    font-size:18px;
+  }
+
+  .project-type{
+    font-size:12px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+  <h2>Ankit</h2>
+
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      Hello, I'm
+      <span class="highlight">Ankit</span>
+    </h1>
+
+    <img src="Profile.jpg.jpeg" alt="Ankit's Profile Photo">
+
+    <p>
+      BBA DBE Student | Content Creator | Customer Support Professional
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#about" class="btn">
+        Know More
+      </a>
+
+      <a
+        href="https://drive.google.com/file/d/10EzjrD9WXoe4wxnhT1TkDH0dNTxyusuL/view?usp=sharing"
+        class="btn resume-btn"
+        target="_blank"
+        rel="noopener noreferrer">
+        Download Resume
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+  <h2>About Me</h2>
+
+  <p class="about-text">
+    I am currently pursuing a Bachelor of Business Administration at IIM Bangalore.
+    Through internships in customer support and content creation, I have developed
+    strong communication and problem-solving skills, and I like to apply them
+    in real-world business settings.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+  <h2>My Skills</h2>
+
+  <div class="skills">
+
+    <div class="skill-pill">
+      Communication Skills
+    </div>
+
+    <div class="skill-pill">
+      Content Writing
+    </div>
+
+    <div class="skill-pill">
+      Customer Handling
+    </div>
+
+    <div class="skill-pill">
+      Team Collaboration
+    </div>
+
+    <div class="skill-pill">
+      Basic HTML & CSS
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION TIMELINE
+========================= -->
+
+<section id="education">
+
+  <h2>Education</h2>
+
+  <div class="timeline">
+
+
+    <!-- IIM Bangalore -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+
+        <h3>
+          IIM Bangalore
+        </h3>
+
+        <p>
+          BBA DBE (Pursuing)
+        </p>
+
+        <span class="timeline-year">
+          2024 - Present
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Class 12 -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+
+        <h3>
+          ST Jagat Gyan Senior Secondary School
+        </h3>
+
+        <p>
+          Class 12
+        </p>
+
+        <span class="timeline-year">
+          2021 - 2023
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Class 10 -->
+
+    <div class="timeline-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+
+        <h3>
+          Manan Vidya Manrakhan Mahto School
+        </h3>
+
+        <p>
+          Class 10
+        </p>
+
+        <span class="timeline-year">
+          2020 - 2021
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS & INTERNSHIPS
+========================= -->
+
+<section id="projects">
+
+  <h2>Projects & Internships</h2>
+
+  <div class="project-timeline">
+
+
+    <!-- Apna Green Products -->
+
+    <div class="project-item">
+
+      <div class="project-dot"></div>
+
+      <div class="project-content">
+
+        <h3>
+          Apna Green Products
+        </h3>
+
+        <span class="project-type">
+          Live Project | IIM Bangalore
+        </span>
+
+        <ul class="card-list">
+
+          <li>
+            Conducted competitor research and analyzed eco-friendly sanitary product brands
+          </li>
+
+          <li>
+            Recommended strategies for Instagram growth, retail expansion and product awareness
+          </li>
+
+          <li>
+            Contributed to packaging, pricing and digital business recommendations
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <!-- GoodGum -->
+
+    <div class="project-item">
+
+      <div class="project-dot"></div>
+
+      <div class="project-content">
+
+        <h3>
+          GoodGum
+        </h3>
+
+        <span class="project-type">
+          Social Media Marketing | IIM Bangalore
+        </span>
+
+        <ul class="card-list">
+
+          <li>
+            Collaborated with the GoodGum team to understand the brand and its marketing needs
+          </li>
+
+          <li>
+            Developed social media marketing strategies and recommendations
+          </li>
+
+          <li>
+            Created sample Canva creatives and contributed to the team's marketing presentation
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <!-- Indori Artist -->
+
+    <div class="project-item">
+
+      <div class="project-dot"></div>
+
+      <div class="project-content">
+
+        <h3>
+          Indori Artist
+        </h3>
+
+        <span class="project-type">
+          3-Month Internship | Content Writer & Creator
+        </span>
+
+        <ul class="card-list">
+
+          <li>
+            Created content for Rangoli artist Shikha Sharma
+          </li>
+
+          <li>
+            Coordinated with the team during content creation
+          </li>
+
+          <li>
+            Worked collaboratively on creative content
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <!-- Concentrix -->
+
+    <div class="project-item">
+
+      <div class="project-dot"></div>
+
+      <div class="project-content">
+
+        <h3>
+          Concentrix (Amazon India)
+        </h3>
+
+        <span class="project-type">
+          3-Month Internship | Customer Support
+        </span>
+
+        <ul class="card-list">
+
+          <li>
+            Handled customer queries related to large appliances
+          </li>
+
+          <li>
+            Assisted customers with ACs, refrigerators and other products
+          </li>
+
+          <li>
+            Identified product-related issues and helped customers find suitable solutions
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+  <h2>Experience</h2>
+
+  <div class="card-container">
+
+    <div class="card">
+
+      <h3>
+        Amazon NA - Teleperformance
+      </h3>
+
+      <p>
+        1 Year Experience in Customer Support & Client Handling
+      </p>
+
+      <ul class="card-list">
+
+        <li>
+          Provided customer support and handled client queries
+        </li>
+
+        <li>
+          Assisted customers in resolving service-related concerns
+        </li>
+
+        <li>
+          Developed communication and customer-handling skills
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+  <h2>Let's Connect</h2>
+
+  <div class="contact-card">
+
+    <p>
+      If you'd like to connect with me,
+      feel free to reach out.
+    </p>
+
+    <div class="contact-links">
+
+      <!-- Email -->
+
+      <a
+        href="mailto:iamankit015@gmail.com"
+        class="btn">
+        Email Me
+      </a>
+
+
+      <!-- LinkedIn -->
+
+      <a
+        href="https://www.linkedin.com/in/ankit-kumar-533249218/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn secondary-btn">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  © 2026 Ankit | Resume Website
+
+</footer>
+
+
+</body>
+
+</html>
